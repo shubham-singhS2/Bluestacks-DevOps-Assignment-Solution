@@ -50,5 +50,5 @@ Create a single CloudFront distribution to deliver content from two S3 website o
 
 | URL                                           | Output                            |
 | --------------------------------------------- | --------------------------------- |
-| `https://xxxxxxxxxxxx.cloudfront.net/`        | Hello, CDN origin is working fine |
-| `[https://d3bl7eemi7lzor.cloudfront.net/devops-folder/](https://d3bl7eemi7lzor.cloudfront.net/devops-folder/) | Hello, CDN 2 origin is working fine |
+| [https://d3bl7eemi7lzor.cloudfront.net/](https://d3bl7eemi7lzor.cloudfront.net/)        | Hello, CDN origin is working fine |
+| [https://d3bl7eemi7lzor.cloudfront.net/devops-folder/](https://d3bl7eemi7lzor.cloudfront.net/devops-folder/) | Hello, CDN 2 origin is working fine |
