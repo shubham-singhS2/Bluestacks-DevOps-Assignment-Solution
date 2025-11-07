@@ -28,21 +28,19 @@ We simply need to count how many times each unique IP appears and display the 8 
 
 Below is the Bash script (`count`) that fulfills the requirements:
 
+ Step 1: Extract only the first field (IP address) from each log line
+ Step 2: Sort the IPs alphabetically (required before counting)
+ Step 3: Use uniq -c to count occurrences of each unique IP
+ Step 4: Sort numerically and in reverse order (most hits first)
+ Step 5: Display only the top 8 results
+ Step 6: Swap the order so output is in format: <ip_address> <number_of_hits>
+
+
 ```bash
 #!/bin/bash
 
 # Define the path to the log file (must be in same directory as this script)
 logfile="logfile"
-
-# -------------------------------------------------------------------
-# Step 1: Extract only the first field (IP address) from each log line
-# Step 2: Sort the IPs alphabetically (required before counting)
-# Step 3: Use uniq -c to count occurrences of each unique IP
-# Step 4: Sort numerically and in reverse order (most hits first)
-# Step 5: Display only the top 8 results
-# Step 6: Swap the order so output is in format: <ip_address> <number_of_hits>
-# -------------------------------------------------------------------
-
 
 cat "$logfile" | \
 awk '{print $1}' | \
@@ -52,7 +50,7 @@ sort -nr | \
 head -8 | \
 awk '{print $2, $1}'
 
-# -------------------------------------------------------------------
+
 # Example Output:
 # 92.6.41.236 22
 # 186.248.72.9 19
@@ -62,7 +60,7 @@ awk '{print $2, $1}'
 # 93.146.139.64 14
 # 80.116.15.0 14
 # 186.213.159.176 11
-# -------------------------------------------------------------------
+
 ```
 
 
